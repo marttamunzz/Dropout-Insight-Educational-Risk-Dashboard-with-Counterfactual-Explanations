@@ -51,5 +51,4 @@ La aplicación se abrirá automáticamente en [http://localhost:8050](http://loc
 ## 📖 Documentación adicional
 - Manual de Usuario  
 
-## 🙌 Agradecimientos
-Agradecimientos a **[tutores / profesores / compañeros / familia]** por el apoyo durante el desarrollo del proyecto.
+
