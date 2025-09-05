@@ -1,0 +1,51 @@
+student_id,Age,Grade,Attendance,Dropout
+1,29,7,0.7,Dropout
+2,24,A,0.7,Dropout
+3,28,A,low,No dropout
+4,21,C,0.7,No dropout
+5,27,7,0.8,No dropout
+6,24,8,0.8,Dropout
+7,28,7,0.8,No dropout
+8,20,fail,0.8,Dropout
+9,19,8,low,Dropout
+10,24,B,low,Dropout
+11,29,7,high,No dropout
+12,27,C,0.7,Dropout
+13,18,nine,0.8,Dropout
+14,27,8,high,No dropout
+15,28,nine,high,Dropout
+16,28,8,high,No dropout
+17,29,fail,0.7,No dropout
+18,26,8,0.7,No dropout
+19,25,C,0.8,No dropout
+20,19,fail,high,No dropout
+21,23,B,high,No dropout
+22,28,fail,0.7,Dropout
+23,25,8,high,Dropout
+24,20,A,low,Dropout
+25,21,8,high,No dropout
+26,20,nine,0.7,Dropout
+27,28,7,0.7,No dropout
+28,22,nine,0.8,Dropout
+29,23,fail,high,Dropout
+30,26,fail,high,No dropout
+31,27,nine,0.8,No dropout
+32,20,nine,0.8,No dropout
+33,27,8,0.7,Dropout
+34,19,B,0.7,Dropout
+35,26,nine,0.7,No dropout
+36,19,C,0.8,No dropout
+37,23,8,high,No dropout
+38,18,7,0.7,No dropout
+39,24,B,low,Dropout
+40,29,B,low,No dropout
+41,18,8,high,Dropout
+42,19,B,0.8,Dropout
+43,26,A,low,Dropout
+44,18,C,0.8,Dropout
+45,18,fail,0.8,Dropout
+46,25,fail,0.8,Dropout
+47,24,A,low,No dropout
+48,22,B,low,No dropout
+49,21,nine,0.7,No dropout
+50,19,C,high,Dropout
