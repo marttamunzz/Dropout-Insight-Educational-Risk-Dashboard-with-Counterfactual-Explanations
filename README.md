@@ -24,7 +24,7 @@ pip install -r requirements.txt
 Para ejecutar la app:
 
 ```bash
-python src/app.py
+python src/index.py
 ```
 
 La aplicación se abrirá automáticamente en [http://localhost:8050](http://localhost:8050).
@@ -32,18 +32,22 @@ La aplicación se abrirá automáticamente en [http://localhost:8050](http://loc
 ## 🖥️ Uso
 
 1. Seleccionar un dataset en formato **.csv**.  
-2. Elegir si se quiere **entrenar un nuevo modelo** o **cargar uno existente**.  
-3. Explorar los resultados en las distintas pestañas:  
+2. El sistema comprueba si existe un modelo previamente guardado:
+      - Si no existe, **se entrena automáticamente desde cero** con los datos cargados y se guarda dentro de una carpeta que si no existe se crea: **"/src/saved_models/nombre_archivo**
+      - Si existe, **se reutiliza el modelo guardado en la carpeta correspondiente dentro de la carpeta correspondiente a ese archivo** para generara predicciones   
+3. Una vez procesados los datos, navegar por las pestañas disponibles en el hub:  
+   - **AutoML Report**
+   - **Classification statistics**
    - **Features Importance**  
    - **What If Analysis**  
    - **Counterfactuals**  
+   - **Group Counterfactuals**
 
 ## 📂 Estructura del repositorio
 
 ```
 ├── src/                # Código fuente de la aplicación
 ├── data/               # Datasets (no se suben al repo)
-├── readme_images/      # Imágenes y gifs para el README
 ├── requirements.txt    # Dependencias del proyecto
 └── README.md           # Documentación principal
 ```
