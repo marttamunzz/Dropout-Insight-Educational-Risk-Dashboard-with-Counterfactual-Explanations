@@ -1,5 +1,6 @@
 import shutil
 import base64
+import csv
 import io
 import os
 import webbrowser
@@ -413,30 +414,57 @@ def validate_requirements(contents, filename):
 
 
 def parse_data(contents, filename):
+    # 1) Validación de extensión
+    if not str(filename).lower().endswith(".csv"):
+        raise ValueError("❌ Formato incorrecto (solo .csv permitido)")
+
+    # 2) Decodificación robusta (UTF-8 con BOM -> fallback latin-1)
     content_type, content_string = contents.split(',')
-    decoded = base64.b64decode(content_string)
-
+    raw = base64.b64decode(content_string)
     try:
-        if 'csv' in filename:
-            df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
+        text = raw.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        text = raw.decode("latin-1")
 
-            # searching for the single column to be the index
-            for col in df.columns:
-                if df[col].is_unique:
-                    df.set_index(col, inplace=True)
-                    print(f"✅ Using '{col}' as index (single column detected)")
+    buf = io.StringIO(text)
+
+    # 3) Intento 1: autodetección de pandas
+    try:
+        df = pd.read_csv(buf, sep=None, engine="python")
+    except Exception:
+        # 4) Intento 2: csv.Sniffer
+        buf.seek(0)
+        try:
+            dialect = csv.Sniffer().sniff(buf.read(2048))
+            buf.seek(0)
+            df = pd.read_csv(buf, delimiter=dialect.delimiter)
+        except Exception:
+            # 5) Intento 3: candidatos comunes
+            buf.seek(0)
+            for cand in [",", ";", "\t", "|", ":"]:
+                buf.seek(0)
+                try:
+                    df = pd.read_csv(buf, sep=cand)
                     break
-            else:
-                # If there is no single column, create one artificial
-                df.reset_index(drop=True, inplace=True)
-                print("⚠️ There is no single column detected. RangeIndex will be used.")
+                except Exception:
+                    df = None
+            if df is None:
+                raise ValueError("❌ No se pudo detectar el separador del CSV.")
 
-            return df
-        else:
-            raise ValueError("❌ Wrong file format (only .csv allowed)")
-    except Exception as e:
-        print(f"❌ Error processing the file: {e}")
-        return None
+    # 6) Limpieza ligera de cabeceras
+    df.columns = [str(c).strip() for c in df.columns]
+
+    # 7) Buscar una columna única para usar de índice
+    for col in df.columns:
+        if df[col].is_unique:
+            df.set_index(col, inplace=True)
+            print(f"✅ Usando '{col}' como índice (columna única detectada)")
+            break
+    else:
+        df.reset_index(drop=True, inplace=True)
+        print("⚠️ No hay columna única. Se usará RangeIndex.")
+
+    return df
 
 def check_requirements_for_training(df, filename):
     """Validate requirements before training the model."""

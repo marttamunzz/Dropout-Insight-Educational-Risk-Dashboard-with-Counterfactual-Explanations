@@ -133,5 +133,4 @@ saved_models/
 *.dill
 *.pkl
 
-# Datasets grandes
-*.csv
+
