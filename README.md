@@ -10,6 +10,22 @@ Herramienta interactiva para cargar datasets, entrenar automáticamente un model
 - Generación de explicaciones y contrafactuales (individuales y grupales).
 - Dashboard interactivo desarrollado en **Plotly Dash**.
 
+
+### 🛠️ Entorno virtual recomendado
+Se recomienda crear un entorno virtual para instalar las dependencias de forma aislada.  
+
+En sistemas basados en Python 3:
+
+```bash
+## Crear entorno virtual
+python -m venv venv
+
+## Activar entorno virtual
+# En Windows:
+venv\Scripts\activate
+# En Linux / MacOS:
+source venv/bin/activate
+
 ## 📦 Requisitos
 Las dependencias se encuentran en `requirements.txt`.
 
@@ -18,6 +34,7 @@ Instalación con pip:
 ```bash
 pip install -r requirements.txt
 ```
+
 
 ## ▶️ Iniciar la aplicación
 
@@ -47,7 +64,7 @@ La aplicación se abrirá automáticamente en [http://localhost:8050](http://loc
 
 ```
 ├── src/                # Código fuente de la aplicación
-├── data/               # Datasets (no se suben al repo)
+├── data/               # Datasets usados
 ├── requirements.txt    # Dependencias del proyecto
 └── README.md           # Documentación principal
 ```
