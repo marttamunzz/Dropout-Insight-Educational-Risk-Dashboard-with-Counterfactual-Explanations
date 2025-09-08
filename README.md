@@ -65,11 +65,12 @@ La aplicación se abrirá automáticamente en [http://localhost:8050](http://loc
 ```
 ├── src/                # Código fuente de la aplicación
 ├── data/               # Datasets usados
+├── doc/                # Manual de usuario
 ├── requirements.txt    # Dependencias del proyecto
 └── README.md           # Documentación principal
 ```
 
 ## 📖 Documentación adicional
-- Manual de Usuario  
+- Manual de Usuario: El manual completo se encuentra disponible en la carpeta [`doc`](doc/ManualDeUsuario.pdf).
 
 
