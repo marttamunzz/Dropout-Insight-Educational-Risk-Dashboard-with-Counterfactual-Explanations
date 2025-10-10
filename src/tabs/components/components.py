@@ -534,7 +534,7 @@ class CounterfactualsComponent(ExplainerComponent):
             labels = ["Original"] + \
                 [f"CF {i+1}" for i in range(len(cf_probas))]
             values = [original_proba] + cf_probas
-            colors = ["gray"] + ["green" if p >
+            colors = ["gray"] + ["green" if p <
                                  original_proba else "red" for p in cf_probas]
 
             fig = go.Figure(go.Bar(
