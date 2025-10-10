@@ -1,58 +1,59 @@
 # Dropout Insight: Educational Risk Dashboard with Counterfactual Explanations
 
-Herramienta interactiva para cargar datasets, entrenar automáticamente un modelo de *machine learning* o reutilizar uno ya entrenado, y visualizar e interpretar las predicciones del riesgo de abandono académico.
+Interactive tool to upload datasets, automatically train a machine learning model o reuse one that is already trained and visualize and interpretate the risk dropout predictions in education. 
 
-## 🚀 Características principales
-- Carga de datasets en formato CSV.
-- Entrenamiento automático de modelos de clasificación.
-- Reutilización de modelos previamente generados.
-- Visualización intuitiva de predicciones y factores de riesgo.
-- Generación de explicaciones y contrafactuales (individuales y grupales).
-- Dashboard interactivo desarrollado en **Plotly Dash**.
+## 🚀 Principal characteristics
+- Upload the file in .csv format
+- Automatical training of classification models
+- Reuse of previous generated models
+- Intuitive visualization of predictions and risk factors
+- Model explications and counterfactuals generation
+- Interactive Dashboard developed in **Plotly Dash**. 
 
 
-### 🛠️ Entorno virtual recomendado
-Se recomienda crear un entorno virtual para instalar las dependencias de forma aislada.  
+### 🛠️ Recommended virtual enviroment 
+It is strongly recommended to create a virtual enviroment to install the dependencies in isolation
 
-En sistemas basados en Python 3:
+In Python 3 based systems:
 
 ```bash
-## Crear entorno virtual
+## Create the virtual enviroment
 python -m venv venv
 
-## Activar entorno virtual
-# En Windows:
+## Activate the virtual enviroment
+# Windows:
 venv\Scripts\activate
-# En Linux / MacOS:
+# Linux / MacOS:
 source venv/bin/activate
 
-## 📦 Requisitos
-Las dependencias se encuentran en `requirements.txt`.
+## 📦 Requests
+The dependencies can be found in 'requirements.txt'
 
-Instalación con pip:
+Instalation with pip:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 
-## ▶️ Iniciar la aplicación
+## ▶️ Initialize the app
 
-Para ejecutar la app:
+For run the app:
 
 ```bash
 python src/index.py
 ```
 
-La aplicación se abrirá automáticamente en [http://localhost:8050](http://localhost:8050).
+La app will open automatically in [http://localhost:8050](http://localhost:8050).
 
-## 🖥️ Uso
+## 🖥️ Use
 
-1. Seleccionar un dataset en formato **.csv**.  
+1. Select a dataset in **.csv** format.  
 2. El sistema comprueba si existe un modelo previamente guardado:
-      - Si no existe, **se entrena automáticamente desde cero** con los datos cargados y se guarda dentro de una carpeta que si no existe se crea: **"/src/saved_models/nombre_archivo**
-      - Si existe, **se reutiliza el modelo guardado en la carpeta correspondiente dentro de la carpeta correspondiente a ese archivo** para generara predicciones   
-3. Una vez procesados los datos, navegar por las pestañas disponibles en el hub:  
+2. The sistem checks if there is and already saved model:
+      - If it doesn't exist, **It is automatically trained from scratch** with the uploaded data and saved in a folder, that if it doesn't exist, it is created: **"/src/saved_models/nombre_archivo**
+      - If it exist, **The model saved in the corresponding folder within the folder corresponding to that file is reused.** for generating predictions   
+3. Once the data is processed, navigate throught the available tabs in the hub:  
    - **AutoML Report**
    - **Classification statistics**
    - **Features Importance**  
@@ -60,17 +61,17 @@ La aplicación se abrirá automáticamente en [http://localhost:8050](http://loc
    - **Counterfactuals**  
    - **Group Counterfactuals**
 
-## 📂 Estructura del repositorio
+## 📂 Repository structure
 
 ```
-├── src/                # Código fuente de la aplicación
-├── data/               # Datasets usados
-├── doc/                # Manual de usuario
-├── requirements.txt    # Dependencias del proyecto
-└── README.md           # Documentación principal
+├── src/                # Source code for the application
+├── data/               # Used Datasets
+├── doc/                # User Manual
+├── requirements.txt    # Project dependencies
+└── README.md           # Project summary
 ```
 
-## 📖 Documentación adicional
-- Manual de Usuario: El manual completo se encuentra disponible en la carpeta [`doc`](doc/ManualDeUsuario.pdf).
+## 📖 Aditional documentation
+- User manual: The complete manual is found available in the folder: [`doc`](doc/ManualDeUsuario.pdf).
 
 
