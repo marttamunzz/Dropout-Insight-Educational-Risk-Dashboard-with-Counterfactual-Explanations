@@ -72,6 +72,6 @@ La app will open automatically in [http://localhost:8050](http://localhost:8050)
 ```
 
 ## 📖 Aditional documentation
-- User manual: The complete manual is found available in the folder: [`doc`](doc/ManualDeUsuario.pdf).
+- User manual: The complete manual is found available in the folder: [`doc`](doc/UserManual.pdf).
 
 
