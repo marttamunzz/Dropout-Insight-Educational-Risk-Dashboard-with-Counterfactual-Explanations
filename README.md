@@ -44,12 +44,11 @@ For run the app:
 python src/index.py
 ```
 
-La app will open automatically in [http://localhost:8050](http://localhost:8050).
+The App will open automatically in [http://localhost:8050](http://localhost:8050).
 
 ## 🖥️ Use
 
 1. Select a dataset in **.csv** format.  
-2. El sistema comprueba si existe un modelo previamente guardado:
 2. The sistem checks if there is and already saved model:
       - If it doesn't exist, **It is automatically trained from scratch** with the uploaded data and saved in a folder, that if it doesn't exist, it is created: **"/src/saved_models/nombre_archivo**
       - If it exist, **The model saved in the corresponding folder within the folder corresponding to that file is reused.** for generating predictions   
