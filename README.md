@@ -63,10 +63,11 @@ This project includes a Dockerfile that allows running the app without installin
 
 ### 1. Build the Docker image
 
+The Dockerfile is located inside the `src/` folder.  
 From the root of the repository run:
 
 ```bash
-docker build -t dropout-insight .
+docker build -t dropout-insight -f src/Dockerfile .
 ```
 
 ### 2. Run the container
@@ -135,7 +136,8 @@ docker rmi dropout-insight
 ## 📂 Repository structure
 
 ```
-├── src/                # Application source code
+├── src/                # Application source code and Dockerfile
+│   └── Dockerfile
 ├── data/               # Used datasets
 ├── doc/                # User manual
 ├── requirements.txt    # Dependencies
