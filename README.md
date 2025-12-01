@@ -81,7 +81,7 @@ After running, open in your browser:
 
 http://localhost:8050
 
-## ⭐ Fast option to automaticaly open the browser
+## ⭐ Fast option to automatically open the browser
 
 This repository includes optional helper scripts that start the container and automatically open the browser.
 
